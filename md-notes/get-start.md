@@ -29,5 +29,21 @@ to add list as a value it has to start with `-`
                 - Yousef
                 - Nader
             daughter: Nada
-
 ```
+
+## Section 2 (Events Fundamentals)
+
+Events are devided to 4 types
+
+- Inside Repository
+- Outside Repository
+- Scheduled Times
+- Manual
+  
+we used the manual in [basics-first-workflow](../.github/workflows/01-basics-first-workflow.yml) as ==> `on: workflow_dispatch`
+
+all trigers are listed in the [Github Actios Documentaions](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows) it can be push, pull,..etc.
+
+It can be single action `on: push` or more than one `on: [push, pull_request]`
+
+
