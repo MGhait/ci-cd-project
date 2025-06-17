@@ -46,4 +46,7 @@ all trigers are listed in the [Github Actios Documentaions](https://docs.github.
 
 It can be single action `on: push` or more than one `on: [push, pull_request]`
 
+Some trigger have default activity type:
+
+By default, a workflow only runs when a `pull_request` event's activity type is `opened`, `synchronize`, or `reopened`
 
