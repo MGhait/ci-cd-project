@@ -45,5 +45,3 @@ we used the manual in [basics-first-workflow](../.github/workflows/01-basics-fir
 all trigers are listed in the [Github Actios Documentaions](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows) it can be push, pull,..etc.
 
 It can be single action `on: push` or more than one `on: [push, pull_request]`
-
-
