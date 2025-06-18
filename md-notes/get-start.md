@@ -79,3 +79,5 @@ In push there is no sub activity BUT we can identify the branch we want our scri
                 - main
                 - 02-basics-events
 ```
+
+Same as branches we can do with `tags`  
