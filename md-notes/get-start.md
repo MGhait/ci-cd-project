@@ -40,9 +40,20 @@ Events are devided to 4 types
 - Scheduled Times
 - Manual
   
-we used the manual in [basics-first-workflow](../.github/workflows/01-basics-first-workflow.yml) as ==> `on: workflow_dispatch`
+You can see an example of Manual in [basics-first-workflow](../.github/workflows/01-basics-first-workflow.yml)
+
+As for the Inside Repository we can find examples of them in
+
+- [basics events](../.github/workflows/02-basics-events.yml)
+- [basics events filter](../.github/workflows/03-basics-events-filters.yml)
 
 all trigers are listed in the [Github Actios Documentaions](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows) it can be push, pull,..etc.
+
+Now we can see the Notes of each
+
+---
+
+### Inside Repository Events
 
 It can be single action `on: push` or more than one `on: [push, pull_request]`
 
@@ -83,3 +94,7 @@ In push there is no sub activity BUT we can identify the branch we want our scri
 Same as branches we can do with `tags`  and `paths` but in paths we specify our location form the root of our project not current workfolw file
 
 > Note in when dealing with `paths` we can use `*` to specify all files in directory " if we tyep *.php" we need to get all files in same directory wiht extinstion of php BUT if we want to get all files in directory and sub-directory we use `**` so in this cas it'll be "**.php"
+
+---
+
+### OutSide Repository Events
