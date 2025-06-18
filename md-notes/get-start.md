@@ -80,4 +80,4 @@ In push there is no sub activity BUT we can identify the branch we want our scri
                 - 02-basics-events
 ```
 
-Same as branches we can do with `tags`  
+Same as branches we can do with `tags`  and `paths` but in paths we specify our location form the root of our project not current workfolw file
