@@ -81,3 +81,5 @@ In push there is no sub activity BUT we can identify the branch we want our scri
 ```
 
 Same as branches we can do with `tags`  and `paths` but in paths we specify our location form the root of our project not current workfolw file
+
+> Note in when dealing with `paths` we can use `*` to specify all files in directory " if we tyep *.php" we need to get all files in same directory wiht extinstion of php BUT if we want to get all files in directory and sub-directory we use `**` so in this cas it'll be "**.php"
