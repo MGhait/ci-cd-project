@@ -50,12 +50,27 @@ Some trigger have default activity type:
 
 By default, a workflow only runs when a `pull_request` event's activity type is `opened`, `synchronize`, or `reopened`
 
-To make the filteration we'll make the event as a key and the activity as a value of the types key inside the event
+To make the filteration we'll make the event as a key and the activity as a value of the types key inside the event. If we have a list of the activity types we can type this in both ways
 
 ```yml
+    # first way
     on:
         pull_request:
             types:
                 - closed
                 - opened
+
+    # second way
+    on:
+        pull_request:
+            types: [closed, reopened]
+```
+
+In push there is no sub activity BUT we can identify the branch we want our script listen to
+
+```yaml
+    on:
+        push:
+            branches:
+                -master
 ```
