@@ -10,8 +10,10 @@ on:
     # branches-ignore:
     #   - master
     #   - main
-    tags:
-      - v2
+    # tags:
+    #   - v2
+    paths:
+      - "routes/web.php"
 
 jobs:
   print-hello-world:
