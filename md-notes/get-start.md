@@ -66,11 +66,16 @@ To make the filteration we'll make the event as a key and the activity as a valu
             types: [closed, reopened]
 ```
 
-In push there is no sub activity BUT we can identify the branch we want our script listen to
+In push there is no sub activity BUT we can identify the branch we want our script listen to or lesten for all branches except one
 
 ```yaml
     on:
         push:
+        # listen to specific branches
             branches:
                 -master
+        # listen to all except specific branches
+            branches-ignore:
+                - main
+                - 02-basics-events
 ```

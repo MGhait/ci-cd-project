@@ -7,8 +7,9 @@ on:
   #     - opend
   #   types: [closed, reopened]
   push:
-    branches:
+    branches-ignore:
       - master
+      - main
 
 jobs:
   print-hello-world:
