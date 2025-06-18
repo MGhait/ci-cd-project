@@ -50,3 +50,12 @@ Some trigger have default activity type:
 
 By default, a workflow only runs when a `pull_request` event's activity type is `opened`, `synchronize`, or `reopened`
 
+To make the filteration we'll make the event as a key and the activity as a value of the types key inside the event
+
+```yml
+    on:
+        pull_request:
+            types:
+                - closed
+                - opened
+```
