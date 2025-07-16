@@ -1,0 +1,14 @@
+name: 05 Basices Event Scheduled
+
+on:
+  schedule:
+    - cron: "*/5 * * * *" # this will run every 5 minutes
+    # you can use more than one cron as a list
+    - cron: "0 0 * * *" # this will run every day
+
+jobs:
+  print-hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      -name: Print Hello World
+      run: echo "Hello World"
