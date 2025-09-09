@@ -9,3 +9,5 @@ jobs:
       - name: Print Context data
         # run: echo ${{ github }}
         run: echo ${{ github.actor }}
+      - name: Print Context two
+        run: echo ${{ github.action_repository }}
