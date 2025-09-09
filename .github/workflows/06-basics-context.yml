@@ -12,3 +12,5 @@ jobs:
       - name: Print Context two
         # run: echo ${{ github.event_name }}
         run: echo ${{ job.status }}
+      - name: Print JSON Context
+        run: echo ${{ toJson(github)}}
