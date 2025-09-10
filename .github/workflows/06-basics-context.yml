@@ -1,5 +1,5 @@
 name: 06 Basics Context
-run-name: ${{ github.actor }} Trying to play with name
+run-name: ${{ github.actor }} Testing context data. Try No. \# ${{ github.run_number }}
 
 on: workflow_dispatch
 
