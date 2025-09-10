@@ -1,4 +1,5 @@
 name: 06 Basics Context
+run-name: Mohamed Gheit Trying to play with name
 
 on: workflow_dispatch
 
@@ -8,9 +9,9 @@ jobs:
     steps:
       - name: Print Context data
         # run: echo ${{ github }}
-        run: echo "${{ github.actor }}"
+        run: echo "${{ github.actor }}" # or you can use github['actor']
       - name: Print Context two
         # run: echo ${{ github.event_name }}
         run: echo ${{ job.status }}
       - name: Print JSON Context
-        run: echo ${{ toJson(github)}}
+        run: echo ${{ toJson(github)}}  #this will give me the json of github object but will cause a failor
