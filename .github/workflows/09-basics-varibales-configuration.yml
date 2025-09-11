@@ -13,3 +13,6 @@ jobs:
 
       - name: Print Secrets
         run: echo ${{ secrets.MY_PASSWORD }}
+
+      - name: Print Default Variables
+        run: env
