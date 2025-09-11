@@ -9,6 +9,7 @@ jobs:
   print_hello_world:
     runs-on: ubuntu-latest
     if: ${{ github.event.pull_request.merged == true }}
+    # if: github.event.pull_request.merged == true
     steps:
       - name: Print Hello World
         run: echo "Hello World "

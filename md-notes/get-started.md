@@ -180,3 +180,5 @@ context is a predefiend github variables it filled with data when the workflow r
 
 you can use github context by using `${{ context }}`
 as an example you can see the [basic context file](../.github/workflows/06-basics-context.yml) to see an example for it
+
+for the if condition we use the following syntax `if: ${{ context }}` as the example in the file [basic condition file](../.github/workflows/07-basics-conditions.yml) as you can see the the commit in the line 12 we can use coditions without wrapping it in the  `${{ }}` experssion
