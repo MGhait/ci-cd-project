@@ -10,3 +10,4 @@ Route::get('/', function () {
 Route::get('/certificate/{user}/{course}', [CertificateController::class, 'generate'])->name('certificate');
 
 // new line in master branche
+// new line in 07 branch 

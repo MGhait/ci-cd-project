@@ -11,4 +11,4 @@ jobs:
     if: ${{ github.event.pull_request.merged == true }}
     steps:
       - name: Print Hello World
-        run: ehco "Hello World ^^"
+        run: echo "Hello World ^^"
