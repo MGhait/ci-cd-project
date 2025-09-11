@@ -11,3 +11,5 @@ jobs:
     steps:
       - name: Print Hello World
         run: echo "Hello World ^^"
+      - name: Print GitHub Context
+        run: echo ${{ toJson(github) }}
