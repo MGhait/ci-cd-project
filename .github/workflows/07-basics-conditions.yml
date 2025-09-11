@@ -1,0 +1,13 @@
+name: 07 Basics Conditions
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  print_hello_world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello World
+        run: ehco "Hello World ^^"
