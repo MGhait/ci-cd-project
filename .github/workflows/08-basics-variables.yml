@@ -17,7 +17,7 @@ jobs:
       - name: Print Variables
         # run: echo $MY_NAME
         env: # step scope variable
-          MY_AGE: 23
+          MY_AGE: "23"
         run: echo ${{ env.MY_NAME }} and my age is ${{ env.My_AGE}}
 
       - name: Print job Scope
