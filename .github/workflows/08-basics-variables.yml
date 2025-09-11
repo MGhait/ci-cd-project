@@ -1,7 +1,7 @@
 name: 08 Basics VAriables
 run-name: ${{ github.actor }} Explaining Varibales - Try Number ${{ github.run_number }}
 
-env:
+env: # workfolw scope
   # NAME: Value
   MY_NAME: "Mohamed Gheit"
 
@@ -11,7 +11,21 @@ on:
 jobs:
   print-variables:
     runs-on: ubuntu-latest
+    env:
+      MY_NAME2: "Mohamed Saad"
     steps:
       - name: Print Variables
         # run: echo $MY_NAME
-        run: echo ${{ env.MY_NAME }}
+        env:
+          MY_AGE: 23
+        run: echo ${{ env.MY_NAME }} and my age is ${{ env.My_AGE}}
+
+      - name: Print job Scope
+        run: echo ${{ env.MY_NAME2 }} and my age is ${{ env.My_AGE}} # age will be empty
+
+
+  print-variables-second:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print job Other Var
+        run: echo ${{ env.MY_NAME2 }} # this won't work
