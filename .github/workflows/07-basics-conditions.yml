@@ -8,8 +8,7 @@ on:
 jobs:
   print_hello_world:
     runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged == true }}
     steps:
       - name: Print Hello World
-        run: echo "Hello World ^^"
-      - name: Print GitHub Context
-        run: echo ${{ toJson(github) }}
+        run: echo "Hello World"
