@@ -11,12 +11,12 @@ on:
 jobs:
   print-variables:
     runs-on: ubuntu-latest
-    env:
+    env: # job scope varibale
       MY_NAME2: "Mohamed Saad"
     steps:
       - name: Print Variables
         # run: echo $MY_NAME
-        env:
+        env: # step scope variable
           MY_AGE: 23
         run: echo ${{ env.MY_NAME }} and my age is ${{ env.My_AGE}}
 
