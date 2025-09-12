@@ -182,3 +182,48 @@ you can use github context by using `${{ context }}`
 as an example you can see the [basic context file](../.github/workflows/06-basics-context.yml) to see an example for it
 
 for the if condition we use the following syntax `if: ${{ context }}` as the example in the file [basic condition file](../.github/workflows/07-basics-conditions.yml) as you can see the the commit in the line 12 we can use coditions without wrapping it in the  `${{ }}` experssion
+
+---
+
+### Variables
+
+We have 4 types of variables
+  
+- environment variables
+- configuration variables
+- sectets
+- default variables
+  
+#### Environment Varialbes
+
+each workflow runs on runner (VM like ubuntu) so these vars are related with this machine only and belongs to this workflow only too
+
+to declare environment varibale we use the keyword `env:` followed by key-value pair
+
+**Naming Convention** in environment vars to keep the name all CAP and descriptive if composite use underscore (_) and avoid default variables names
+
+We can access the environment vars using directly like line 16 in [basic variables file](../.github/workflows/08-basics-variables.yml) or we can use the best practice the context `env.VAR_NAME` as used in line 17 in same file
+
+#### Configuration Varialbes
+
+configuration varivalbes can be used in working repository and can be accessed from multiple workflows in same repo unlike environmnet variables
+
+> to init a config var we go to **`settings -> Secrets and variables -> Actions -> Variables -> New repository variable`**
+
+and the context variable for conf vars are `${{ var.context }}`
+
+#### Secrets
+
+Same as configuration Variables but the value is masked
+
+> to init a config var we go to **`settings -> Secrets and variables -> Actions -> Secrets -> New repository secret`**
+
+and the context variable for conf vars are `${{ secrets.context }}`
+
+#### Default Variables
+
+the predefied vars that github gives it to us so we can avoid nameing any environmnet vars with same name
+
+to see every default var we can use the `run: env` as shown in the [basic var conf file](../.github/workflows/09-basics-varibales-configuration.yml)
+
+we can avoid naming vars that start with prefex `GITHUB_` or `RUNNER_`
