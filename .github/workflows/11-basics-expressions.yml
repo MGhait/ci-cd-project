@@ -1,0 +1,15 @@
+name: 11 Basics Experssions
+run-name: ${{ github.actor }} Trying Experssions - Try Number ${{ github.run_number }}
+
+env:
+  RUN_NUMBER: ${{ github.run_nubmer }}
+
+on:
+  workflow_dispatch
+
+jobs:
+  Print-Hello-World:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print RUN Number
+        run: echo ${{ env.RUN_NUMBER }}
