@@ -1,0 +1,15 @@
+name: 14 Basics Matrix
+run-name: ${{ github.actor }} Trying Matrix - Try Number ${{ github.run_number }}
+
+on:
+  workflow_dispatch
+
+jobs:
+  Build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - name: Build Project
+        run: echo "Build Project On Operating System ( ${{ matrix.os }} )"
