@@ -227,3 +227,74 @@ the predefied vars that github gives it to us so we can avoid nameing any enviro
 to see every default var we can use the `run: env` as shown in the [basic var conf file](../.github/workflows/09-basics-varibales-configuration.yml)
 
 we can avoid naming vars that start with prefex `GITHUB_` or `RUNNER_`
+
+---
+
+### Experessions
+
+the value inside the `${{ }}` is called experssion so any context is mainly an expression.
+
+the purpose of expression is to give a dynamic value to a variable to use in our workflow genrally.
+
+for expressions you can use boolean, null, number, string 
+
+> You don't need to enclose strings in ${{ and }}. However, if you do, you must use single quotes (') around the string. To use a literal single quote, escape the literal single quote using an additional single quote (''). Wrapping with double quotes (") will throw an error.
+
+``` yml
+env:
+  MY_NUM: ${{ null }}
+  BOOL_NUM: ${{ false }}
+  INT_NUM: ${{ 711 }}
+  FLOAT_NUM: ${{ -9.2 }}
+  HEXADECIMAL_NUM: ${{ 0xff }}
+  EXPONENTILA_NUM: ${{ -2.99e-2 }}
+  STRING_VALUE: Mona the Octocat
+  STRING_IN_BRACES: ${{ 'It''s open source!' }}
+  ```
+
+#### Functions
+
+GitHub offers a set of built-in functions that you can use in expressions. Some functions cast values to a string to perform comparisons. GitHub casts data types to a string using these conversions:
+
+---
+
+| Type | Result |
+|------|--------|
+|Null |' '|
+|Boolean|'true' or 'false'|
+|Number|Decimal format, exponential for large numbers|
+|Array|Arrays are not converted to a string|
+|Object | Objects are not converted to a string|
+
+`contains( search, item )`
+
+`contains(github.event.issue.labels.*.name, 'bug')`  
+ returns `true` if the issue related to the event has a label `"bug"`.
+
+Instead of writing `github.event_name == "push" || github.event_name == "pull_request"`
+ you can use contains() with fromJSON() to check if an array of strings contains an item.
+ For example, `contains(fromJSON('["push", "pull_request"]'), github.event_name)` returns true if `github.event_name` is `"push"` or `"pull_request"`.
+
+`startsWith( searchString, searchValue )`
+
+`endsWith( searchString, searchValue )`
+
+`format( string, replaceValue0, replaceValue1, ..., replaceValueN)`
+
+ Replaces values in the string, with the variable `replaceValueN`. Variables in the string are specified using the `{N}` syntax, where `N` is an integer. You must specify at least one `replaceValue` and `string`. There is no maximum for the number of variables (`replaceValueN`) you can use. Escape curly braces using double braces.
+
+you can see example of format in the [basics expresssions file](../.github/workflows/11-basics-expressions.yml)
+
+`join( array, optionalSeparator )`
+
+ The value for `array` can be an array or a string. All values in `array` are concatenated into a string. If you provide `optionalSeparator`, it is inserted between the concatenated values. Otherwise, the default separator `,` is used. Casts values to a string.
+
+ example `join(github.event.issue.labels.*.name, ', ')` may return _'bug, help wanted'_
+
+`toJSON(value)`
+
+Returns a pretty-print JSON representation of `value`. You can use this function to debug the information provided in contexts.
+
+`fromJSON(value)`
+
+ Returns a JSON object or JSON data type for `value`. You can use this function to provide a JSON object as an evaluated expression or to convert any data type that can be represented in JSON or JavaScript, such as strings, booleans, null values, arrays, and objects.
