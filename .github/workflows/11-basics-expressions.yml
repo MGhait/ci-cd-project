@@ -4,7 +4,8 @@ run-name: ${{ github.actor }} Trying Experssions - Try Number ${{ github.run_num
 env:
   # RUN_NUMBER: ${{ github.run_number == 3 }} # will give a bool value
   RUN_NUMBER: ${{ github.run_number > 1 && 'Greater Than 1' || 'less than 1'}} # ternary operator in github actions
-
+  TESTING_VALUE: ${{ contains('hello world', 'Wor') }}
+  TESTING_VALUE2: ${{ contains('hello World', 'lo') }}
 on:
   workflow_dispatch
 
@@ -14,3 +15,10 @@ jobs:
     steps:
       - name: Print RUN Number
         run: echo ${{ env.RUN_NUMBER }}
+
+      - name: Tring Functions
+        run: |
+          echo "for first function ${{ env.TESTING_VALUE }}"
+          echo for the second one related to lo : ${{ env.TESTING_VALUE2 }}
+          echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
+          echo ${{ format('{{Hello {0} {1} {2}!}}', 'Mona', 'the', 'Octocat') }}
