@@ -9,6 +9,13 @@ Route::get('/', function () {
 
 Route::get('/certificate/{user}/{course}', [CertificateController::class, 'generate'])->name('certificate');
 
+use App\Http\Controllers\LabReportController;
+
+Route::get('/urine-analysis', [LabReportController::class, 'urineAnalysis']);
+Route::get('/first', [LabReportController::class, 'showUrineAnalysis']);
+Route::get('/lab-tests', [LabReportController::class, 'labTests']);
+
+
 // new line in master branche
 // new line in 07 branch
 
