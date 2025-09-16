@@ -298,3 +298,11 @@ Returns a pretty-print JSON representation of `value`. You can use this function
 `fromJSON(value)`
 
  Returns a JSON object or JSON data type for `value`. You can use this function to provide a JSON object as an evaluated expression or to convert any data type that can be represented in JSON or JavaScript, such as strings, booleans, null values, arrays, and objects.
+
+---
+
+### needs
+
+need is a job dependency that define the workflow of the `jobs` as shown in the demo example in [basics needs file](../.github/workflows/13-basics-needs.yml) we can't test if the bulid fails and we can't deploy if the test fail so we use the `needs` in jobs scope. we can make same consept with `steps` using `if:`
+
+---
