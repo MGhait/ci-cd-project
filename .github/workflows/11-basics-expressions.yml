@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} Trying Experssions - Try Number ${{ github.run_num
 
 env:
   # RUN_NUMBER: ${{ github.run_number == 3 }} # will give a bool value
-  RUN_NUMBER: ${{ github.run_number > 1 && "Greater Than 1" || "less than 1"}} # ternary operator in github actions
+  RUN_NUMBER: ${{ github.run_number > 1 && 'Greater Than 1' || 'less than 1'}} # ternary operator in github actions
 
 on:
   workflow_dispatch
