@@ -8,10 +8,17 @@ jobs:
   php-version:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup PHP Version 7.2
-        # - uses: actions/checkout@v3
-        uses: nanasess/setup-php@v4
+      # - name: Setup PHP Version 7.2
+      #   # - uses: actions/checkout@v3
+      #   uses: nanasess/setup-php@v4
+      #   with:
+      #     php-version: '7.2'
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.2'
+          php-version: '8.4'
+
+      - name: Print PHP version
+        run: echo ${{ steps.setup-php.outputs.php-version }}
       - name: Check PHP php-version
         run: php -v
