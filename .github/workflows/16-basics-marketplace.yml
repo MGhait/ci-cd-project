@@ -1,0 +1,12 @@
+name: 16 Basics Marketpalece
+run-name: ${{ github.actor }} Trying Marketpalece - Try Number ${{ github.run_number }}
+
+on:
+  workflow_dispatch
+
+jobs:
+  php-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PHP php-version
+        run: php -v
