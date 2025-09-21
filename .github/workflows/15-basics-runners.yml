@@ -1,0 +1,12 @@
+name: 15 Basics Runners
+run-name: ${{ github.actor }} Trying Runners - Try Number ${{ github.run_number }}
+
+on:
+  workflow_dispatch
+
+jobs:
+  Build:
+    runs-on: [self-hosted, Linux, X64, ArchRunner]
+    steps:
+      - name: Print Hello world
+        run: echo "Hello World"
