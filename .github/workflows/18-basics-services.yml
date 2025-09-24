@@ -8,11 +8,14 @@ jobs:
   redis-job:
     runs-on: ubuntu-latest
 
-    services:
-      redis:
-        image: redis:latest
+    # services:
+    #   redis:
+    #     image: redis:latest
       # MySQL:
       #   image: mysql:latest  # can use many services [container that works on background]
     steps:
+      - name: Install Redis Redis CLI
+        run: sudo apt-get install -y redis
+
       - name: Check radis connection
         run: redis-cli ping
