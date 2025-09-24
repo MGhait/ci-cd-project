@@ -11,6 +11,8 @@ jobs:
     services:
       redis:
         image: redis:latest
+      # MySQL:
+      #   image: mysql:latest  # can use many services [container that works on background]
     steps:
       - name: Check radis connection
         run: redis-cli ping
