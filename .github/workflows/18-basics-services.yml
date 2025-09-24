@@ -1,0 +1,16 @@
+name: 18 Basics Services
+run-name: ${{ github.actor }} Trying Services - Try Number ${{ github.run_number }}
+
+on:
+  workflow_dispatch
+
+jobs:
+  redis-job:
+    runs-on: ubuntu-latest
+
+    services:
+      redis:
+        image: redis:latest
+    steps:
+      - name: Check radis connection
+        run: redis-cli ping
