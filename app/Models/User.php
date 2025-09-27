@@ -40,6 +40,9 @@ class User extends Authenticatable
      */
     protected function casts(): array
     {
-        return []; // this is a bad modification
+        return [
+            1,
+            2
+        ]; // this is a bad modification
     }
 }
