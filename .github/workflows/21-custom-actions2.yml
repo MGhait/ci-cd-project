@@ -4,6 +4,9 @@ run-name: ${{ github.actor }} Trying Custom Actions 2 - Try Number ${{ github.ru
 on:
   workflow_dispatch
 
+permissions:
+  issues: write
+
 jobs:
   hopen-new-issue-job:
     runs-on: ubuntu-latest
