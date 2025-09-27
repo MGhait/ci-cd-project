@@ -16,5 +16,5 @@ jobs:
       - name: Comment On PR
         run: gh pr comment $PR_NUMBER --body "The PR Will Not Be Merged. Please Update Your code To Satisfy Our Requirements And Open A New PR."
         env:
-          GH_TOKEN: $${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: 13
