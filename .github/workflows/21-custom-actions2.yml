@@ -8,10 +8,10 @@ jobs:
   hopen-new-issue-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v5
+      # - name: Checkout Code
+      #   uses: actions/checkout@v5
 
       - name: Open New Issue
-        uses: gh issue create --title "New Issue From Github Actions" --body "Nothing works"
+        run: gh issue create --title "New Issue From Github Actions" --body "Nothing works"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
