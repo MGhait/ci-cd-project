@@ -1,0 +1,17 @@
+name: 20 Basics Custom Actions 2
+run-name: ${{ github.actor }} Trying Custom Actions 2 - Try Number ${{ github.run_number }}
+
+on:
+  workflow_dispatch
+
+jobs:
+  hopen-new-issue-job:
+    runs-on: ubuntu-latest
+    steps:
+      # - name: Checkout Code
+      #   uses: actions/checkout@v5
+
+      - name: Open New Issue
+        uses: gh issue create --title "New Issue From Github Actions" --body "Nothing works"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
