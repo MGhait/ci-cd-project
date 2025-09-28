@@ -15,9 +15,8 @@ Route::get('/urine-analysis', [LabReportController::class, 'urineAnalysis']);
 Route::get('/first', [LabReportController::class, 'showUrineAnalysis']);
 Route::get('/lab-tests', [LabReportController::class, 'labTests']);
 
-
 // new line in master branche
 // new line in 07 branch
 
-//edit here too same branch 17
+// edit here too same branch 17
 // new line in 17 branch

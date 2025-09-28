@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 class LabReportController extends Controller
@@ -65,6 +64,7 @@ class LabReportController extends Controller
         ];
 
         $pdf = Pdf::loadView('first', $data);
+
         return $pdf->stream('urine_analysis.pdf');
     }
 
@@ -163,10 +163,11 @@ class LabReportController extends Controller
             'inr_result' => 1.16,
         ];
 
-
         $pdf = Pdf::loadView('lab_tests', $data);
+
         return $pdf->stream('lab_tests.pdf');
     }
+
     public function showUrineAnalysis()
     {
         $data = [

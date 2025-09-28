@@ -7,5 +7,4 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
 
-
-//edit here too same branch 17
+// edit here too same branch 17
