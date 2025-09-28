@@ -41,7 +41,9 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            0 // bad-commit
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+            // not bad one this time
         ];
     }
 }
