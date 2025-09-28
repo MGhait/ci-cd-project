@@ -1,0 +1,31 @@
+name: Example 02 - Code Fromatting With Laravel Pint
+run-name: Example 02 Fromatting - Try Number ${{ github.run_number }}
+
+on:
+ push:
+  branches:
+    - master
+
+# permissions:
+#   pull-requests: write
+
+jobs:
+  run-pint-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      # - name: Install PHP & Composer
+
+      - name: install Laravel pint
+        run: composer require laravel/pint --dev
+
+      - name: run pint
+        run: ./vendor/bin/pint -v
+
+      - name: commit changes back
+        run: |
+          git add .
+          git commit -m "Run Pint"
+          git push
