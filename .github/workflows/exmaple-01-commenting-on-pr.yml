@@ -10,9 +10,9 @@ jobs:
   comment-on-pr-jobs:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Github Context
-        run: echo ${{ toJson(github) }}
-        
+      # - name: Print Github Context
+      #   run: echo ${{ toJson(github) }} to get the number dynamic
+
       - name: Checkout Code
         uses: actions/checkout@v5
 
@@ -20,4 +20,4 @@ jobs:
         run: gh pr comment $PR_NUMBER --body "The PR Will Not Be Merged. Please Update Your code To Satisfy Our Requirements And Open A New PR."
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: 13
+          PR_NUMBER: ${{ github.event.pull_request.number }}
