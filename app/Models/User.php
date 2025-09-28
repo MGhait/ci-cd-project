@@ -42,7 +42,6 @@ class User extends Authenticatable
     {
         return [
             1,
-            2
         ]; // this is a bad modification 22
     }
 }
