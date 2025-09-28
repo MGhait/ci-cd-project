@@ -10,6 +10,9 @@ jobs:
   comment-on-pr-jobs:
     runs-on: ubuntu-latest
     steps:
+      - name: Print Github Context
+        run: echo ${{ toJson(github) }}
+        
       - name: Checkout Code
         uses: actions/checkout@v5
 
