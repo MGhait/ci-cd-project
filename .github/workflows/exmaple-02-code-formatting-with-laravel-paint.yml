@@ -6,8 +6,8 @@ on:
   branches:
     - master
 
-# permissions:
-#   pull-requests: write
+permissions:
+  contents: write
 
 jobs:
   run-pint-job:
@@ -26,8 +26,8 @@ jobs:
 
       - name: commit changes back
         run: |
-          git config --local user.email "github-actions[bot]@users.noreplay.github.com"
-          git config --local user.name "github-acitons[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add .
           git commit -m "Run Pint"
           git push
