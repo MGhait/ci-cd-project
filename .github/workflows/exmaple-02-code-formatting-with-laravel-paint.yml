@@ -25,9 +25,11 @@ jobs:
         run: ./vendor/bin/pint -v
 
       - name: commit changes back
+      # ${{ github. event_name == 'push' && '' || 'something esle' }} remeber ternary operator
+      # if nothing to commit (push directly to the master) exit and do not commit changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
-          git commit -m "Run Laravel Pint"
+          git commit -m "Run Laravel Pint" || exit 0
           git push
