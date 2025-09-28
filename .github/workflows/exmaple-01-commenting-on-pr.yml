@@ -6,6 +6,9 @@ on:
     types:
       - closed
 
+permissions:
+  pull-requests: write 
+
 jobs:
   comment-on-pr-jobs:
     runs-on: ubuntu-latest
